@@ -34,4 +34,8 @@ final class PlayWithNumbersTest extends TestCase
     public function testNEqual4(): void {
         $this->assertEquals("IV", PlayWithNumbers::decimalToRoman(4));
     }
+
+    public function testNEqual5(): void {
+        $this->assertEquals("V", PlayWithNumbers::decimalToRoman(5));
+    }
 }
