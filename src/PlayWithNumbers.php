@@ -22,20 +22,23 @@ final class PlayWithNumbers
             if ($n === -1) {
                 $romanN = 'I' . $romanN;
             }
-        } else {
-
-            for ($i = 0; $i < $n; $i++) {
-                $romanN .= 'I';
-    
-                $romanN = preg_replace('/IIII/', 'IV', $romanN);
-                $romanN = preg_replace('/IVI/', 'V', $romanN);
-    
-            }
         }
 
-        
+        if ($n >= 5 - 1) {
+            $value = 'V';
 
-       
+            $n -= 5;
+
+            if ($n === -1) {
+                $value = 'I' . $value;
+            }
+
+            $romanN .= $value;
+        }
+
+        for ($i = 0; $i < $n; $i++) {
+            $romanN .= 'I';
+        }
 
         return $romanN;
     }
