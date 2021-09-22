@@ -1,0 +1,18 @@
+{
+    "name": "vayk/tdd-exam",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vayk\\TddExam\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sir Papaya",
+            "email": "maretvincent@protonmail.com"
+        }
+    ],
+    "require": {}
+}
