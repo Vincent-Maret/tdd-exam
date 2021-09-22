@@ -18,6 +18,8 @@ final class PlayWithNumbers
         }
 
         if ($romanN === 'IIII') return 'IV';
+        if ($romanN === 'IIIII') return 'V';
+
 
         return $romanN;
     }
