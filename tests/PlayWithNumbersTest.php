@@ -18,4 +18,8 @@ final class PlayWithNumbersTest extends TestCase
         $this->expectException(Exception::class);
         PlayWithNumbers::decimalToRoman(4000);
     }
+
+    public function testNEqual0(): void {
+        $this->assertEquals("", PlayWithNumbers::decimalToRoman(0));
+    }
 }
