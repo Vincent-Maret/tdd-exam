@@ -12,28 +12,20 @@ final class PlayWithNumbers
             throw new Exception('Unexpected: n should be lower or equal to 3000');
         }
 
+        $milestones = [10 => 'X', 5 => 'V'];
         $romanN = "";
 
-        if ($n >= 10 - 1) {
-            $romanN .= 'X';
-
-            $n -= 10;
-
-            if ($n === -1) {
-                $romanN = 'I' . $romanN;
-            }
-        }
-
-        if ($n >= 5 - 1) {
-            $value = 'V';
-
-            $n -= 5;
-
-            if ($n === -1) {
-                $value = 'I' . $value;
-            }
-
-            $romanN .= $value;
+        foreach($milestones as $milestone => $value) {
+            if ($n >= $milestone - 1) {
+                $valueToAdd = $value;
+                $n -= $milestone;
+    
+                if ($n === -1) {
+                    $valueToAdd= 'I' . $valueToAdd;
+                }
+            
+                $romanN .= $valueToAdd;
+            }    
         }
 
         for ($i = 0; $i < $n; $i++) {
