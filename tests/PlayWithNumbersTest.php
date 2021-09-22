@@ -13,4 +13,9 @@ final class PlayWithNumbersTest extends TestCase
         $this->expectException(Exception::class);
         PlayWithNumbers::decimalToRoman(-5);
     }
+
+    public function testNOver3000(): void {
+        $this->expectException(Exception::class);
+        PlayWithNumbers::decimalToRoman(4000);
+    }
 }
