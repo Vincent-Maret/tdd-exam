@@ -11,6 +11,12 @@ final class PlayWithNumbers
             throw new Exception('Unexpected: n should be lower or equal to 3000');
         }
 
-        return "";
+        $romanN = "";
+
+        for ($i = 0; $i < $n; $i++) {
+            $romanN .= 'I';
+        }
+
+        return $romanN;
     }
 }
