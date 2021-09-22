@@ -1,0 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+final class PlayWithNumbers
+{
+    public static function decimalToRoman(int $n): string {
+
+    }
+}
