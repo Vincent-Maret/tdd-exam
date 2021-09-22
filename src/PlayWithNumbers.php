@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 final class PlayWithNumbers
 {
-    public static function decimalToRoman(int $n): string {
+    public static function decimalToRoman(int $n): string
+    {
         if ($n < 0) {
             throw new Exception('Unexpected: n should be greater than 0');
         } else if ($n > 3000) {
@@ -13,13 +14,28 @@ final class PlayWithNumbers
 
         $romanN = "";
 
-        for ($i = 0; $i < $n; $i++) {
-            $romanN .= 'I';
+        if ($n >= 10 - 1) {
+            $romanN .= 'X';
 
-            $romanN = preg_replace('/IIII/', 'IV', $romanN);
-            $romanN = preg_replace('/IVI/', 'V', $romanN);
+            $n -= 10;
 
+            if ($n === -1) {
+                $romanN = 'I' . $romanN;
+            }
+        } else {
+
+            for ($i = 0; $i < $n; $i++) {
+                $romanN .= 'I';
+    
+                $romanN = preg_replace('/IIII/', 'IV', $romanN);
+                $romanN = preg_replace('/IVI/', 'V', $romanN);
+    
+            }
         }
+
+        
+
+       
 
         return $romanN;
     }
