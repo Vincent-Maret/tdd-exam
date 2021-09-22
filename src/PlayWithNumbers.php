@@ -15,11 +15,11 @@ final class PlayWithNumbers
 
         for ($i = 0; $i < $n; $i++) {
             $romanN .= 'I';
+
+            $romanN = preg_replace('/IIII/', 'IV', $romanN);
+            $romanN = preg_replace('/IVI/', 'V', $romanN);
+
         }
-
-        if ($romanN === 'IIII') return 'IV';
-        if ($romanN === 'IIIII') return 'V';
-
 
         return $romanN;
     }
