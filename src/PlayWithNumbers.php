@@ -10,5 +10,7 @@ final class PlayWithNumbers
         } else if ($n > 3000) {
             throw new Exception('Unexpected: n should be lower or equal to 3000');
         }
+
+        return "";
     }
 }
